@@ -18,26 +18,29 @@ using Transmitly.Util;
 
 namespace Transmitly.ChannelProvider.SendGrid.Configuration
 {
+
     /// <summary>
     /// Extensions for configuring SendGrid extended properties for email channels.
     /// </summary>
     public static class SendGridChannelProviderExtendedPropertiesBuilderExtensions
     {
         private static Type? _emailAdaptorType;
-        internal static IEmailExtendedChannelProperties Email => Create<IEmailExtendedChannelProperties>(Guard.AgainstNull(_emailAdaptorType));
-
         private static Type? _deliveryReportAdaptorType;
-        internal static IDeliveryReportExtendedProperties DeliveryReport => Create<IDeliveryReportExtendedProperties>(Guard.AgainstNull(_deliveryReportAdaptorType));
+
+        internal static IEmailExtendedChannelProperties Email => Create<IEmailExtendedChannelProperties, EmptyEmailExtendedChannelProperties>(_emailAdaptorType);
+        internal static IDeliveryReportExtendedProperties DeliveryReport => Create<IDeliveryReportExtendedProperties, EmptyDeliveryReportExtendedProprties>(_deliveryReportAdaptorType);
 
         /// <summary>
         /// Creates an instance of the specified type.
         /// </summary>
         /// <typeparam name="T">Type to create a new instance of</typeparam>
         /// <param name="t"></param>
+        /// <typeparam name="TDefault"></typeparam>
         /// <returns></returns>
-        private static T Create<T>(Type t)
+        private static T Create<T, TDefault>(Type? t)
+            where TDefault : T, new()
         {
-            return (T)Guard.AgainstNull(Activator.CreateInstance(t));
+            return t is null ? new TDefault() : (T)Activator.CreateInstance(t)!;
         }
 
         /// <summary>
@@ -66,5 +69,10 @@ namespace Transmitly.ChannelProvider.SendGrid.Configuration
             return builder;
         }
 
+        internal static void Reset()
+        {
+            _emailAdaptorType = null;
+            _deliveryReportAdaptorType = null;
+        }
     }
 }

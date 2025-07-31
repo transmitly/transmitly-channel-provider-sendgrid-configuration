@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36310.24 d17.14
+VisualStudioVersion = 17.14.36310.24
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transmitly.ChannelProvider.SendGrid.Configuration", "src\Transmitly.ChannelProvider.SendGrid.Configuration\Transmitly.ChannelProvider.SendGrid.Configuration.csproj", "{618ADCAB-6DC7-4620-CBF2-3A024C3779F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transmitly.ChannelProvider.SendGrid.ConfigurationTests", "tests\Transmitly.ChannelProvider.SendGrid.ConfigurationTests\Transmitly.ChannelProvider.SendGrid.ConfigurationTests.csproj", "{CDF8D4B7-2CAE-EE1C-98F2-386D58430A4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{618ADCAB-6DC7-4620-CBF2-3A024C3779F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{618ADCAB-6DC7-4620-CBF2-3A024C3779F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{618ADCAB-6DC7-4620-CBF2-3A024C3779F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDF8D4B7-2CAE-EE1C-98F2-386D58430A4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDF8D4B7-2CAE-EE1C-98F2-386D58430A4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDF8D4B7-2CAE-EE1C-98F2-386D58430A4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDF8D4B7-2CAE-EE1C-98F2-386D58430A4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
