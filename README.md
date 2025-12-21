@@ -1,6 +1,6 @@
 # Transmitly.ChannelProvider.SendGrid.Configuration
 
-A shared configuration for the Transmitly SenGrid channel provider.
+A shared configuration for the Transmitly™ SenGrid channel provider.
 
 ### Getting started
 
