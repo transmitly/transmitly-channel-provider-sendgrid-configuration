@@ -48,12 +48,12 @@ namespace Transmitly
 			return SendGridChannelProviderExtendedPropertiesBuilderExtensions.Email.Adapt(email);
 		}
 
-		/// <summary>
-		/// Infobip specific settings for sms delivery reports.
-		/// </summary>
-		/// <param name="deliveryReport">Delivery Report.</param>
-		/// <returns>Infobip SMS delivery report properties.</returns>
-		public static IDeliveryReportExtendedProperties SendGrid(this DeliveryReport deliveryReport)
+        /// <summary>
+        /// SendGrid specific settings for sms delivery reports.
+        /// </summary>
+        /// <param name="deliveryReport">Delivery Report.</param>
+        /// <returns>Infobip SMS delivery report properties.</returns>
+        public static IDeliveryReportExtendedProperties SendGrid(this DeliveryReport deliveryReport)
 		{
 			return SendGridChannelProviderExtendedPropertiesBuilderExtensions.DeliveryReport.Adapt(deliveryReport);
 		}
