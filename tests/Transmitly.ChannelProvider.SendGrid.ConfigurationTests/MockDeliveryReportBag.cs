@@ -1,4 +1,4 @@
-﻿// ﻿﻿Copyright (c) Code Impressions, LLC. All Rights Reserved.
+﻿// Copyright (c) Code Impressions, LLC. All Rights Reserved.
 //  
 //  Licensed under the Apache License, Version 2.0 (the "License")
 //  you may not use this file except in compliance with the License.
@@ -12,13 +12,14 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
+using Transmitly.ChannelProvider.SendGrid.Configuration;
 using Transmitly.Delivery;
 
 namespace Transmitly.ChannelProvider.SendGrid.ConfigurationTests
 {
     class MockDeliveryReportBag : IDeliveryReportExtendedProperties
     {
-        public IEmailExtendedDeliveryReportProperties Email => throw new NotImplementedException();
+        public IEmailExtendedDeliveryReportProperties Email => new EmptyEmailExtendedDeliveryReportProperties();
 
         public IDeliveryReportExtendedProperties Adapt(DeliveryReport report)
         {

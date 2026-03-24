@@ -1,4 +1,4 @@
-﻿// ﻿﻿Copyright (c) Code Impressions, LLC. All Rights Reserved.
+﻿// Copyright (c) Code Impressions, LLC. All Rights Reserved.
 //  
 //  Licensed under the Apache License, Version 2.0 (the "License")
 //  you may not use this file except in compliance with the License.
@@ -67,7 +67,18 @@ namespace Transmitly.ChannelProvider.SendGrid.ConfigurationTests
             var mockBag = new Mock<IEmailExtendedChannelProperties>();
             mockBag.SetupAllProperties();
 
-            SendGridChannelProviderExtendedPropertiesBuilderExtensions.AddDeliveryReportExtendedProprtiesAdaptor<MockDeliveryReportBag>(null);
+            SendGridChannelProviderExtendedPropertiesBuilderExtensions.AddDeliveryReportExtendedPropertiesAdaptor<MockDeliveryReportBag>(null);
+            var result = SendGridChannelProviderConfigurationExtensions.SendGrid(report);
+
+            Assert.IsInstanceOfType<MockDeliveryReportBag>(result);
+        }
+
+        [TestMethod]
+        public void DeliveryExtensionShouldStillSupportLegacyTypoMethod()
+        {
+            var report = new DeliveryReport(null, null, null, null, null, null, null, null, null, null);
+
+            SendGridChannelProviderExtendedPropertiesBuilderExtensions.AddDeliveryReportExtendedPropertiesAdaptor<MockDeliveryReportBag>(null);
             var result = SendGridChannelProviderConfigurationExtensions.SendGrid(report);
 
             Assert.IsInstanceOfType<MockDeliveryReportBag>(result);

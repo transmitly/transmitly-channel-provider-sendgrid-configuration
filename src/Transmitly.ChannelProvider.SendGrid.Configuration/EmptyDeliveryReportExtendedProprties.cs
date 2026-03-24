@@ -1,4 +1,4 @@
-﻿// ﻿﻿Copyright (c) Code Impressions, LLC. All Rights Reserved.
+﻿// Copyright (c) Code Impressions, LLC. All Rights Reserved.
 //  
 //  Licensed under the Apache License, Version 2.0 (the "License")
 //  you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ namespace Transmitly.ChannelProvider.SendGrid.Configuration
 {
     sealed class EmptyDeliveryReportExtendedProprties : IDeliveryReportExtendedProperties
     {
-        public IEmailExtendedDeliveryReportProperties Email => throw new NotImplementedException();
+        public IEmailExtendedDeliveryReportProperties Email => new EmptyEmailExtendedDeliveryReportProperties();
 
         public IDeliveryReportExtendedProperties Adapt(DeliveryReport report)
         {

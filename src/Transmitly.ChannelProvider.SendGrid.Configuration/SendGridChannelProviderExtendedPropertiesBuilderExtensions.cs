@@ -1,4 +1,4 @@
-﻿// ﻿﻿Copyright (c) Code Impressions, LLC. All Rights Reserved.
+﻿// Copyright (c) Code Impressions, LLC. All Rights Reserved.
 //  
 //  Licensed under the Apache License, Version 2.0 (the "License")
 //  you may not use this file except in compliance with the License.
@@ -14,7 +14,6 @@
 
 using System;
 using Transmitly.ChannelProvider.Configuration;
-using Transmitly.Util;
 
 namespace Transmitly.ChannelProvider.SendGrid.Configuration
 {
@@ -59,11 +58,11 @@ namespace Transmitly.ChannelProvider.SendGrid.Configuration
         /// <summary>
         /// Adds an email delivery report extended properties adaptor to the channel provider registration builder.
         /// </summary>
-        /// <typeparam name="T">The concrete <see cref="IDeliveryReportExtendedProperties"/> to register for email delivery report extended proprties.</typeparam>
+        /// <typeparam name="T">The concrete <see cref="IDeliveryReportExtendedProperties"/> to register for email delivery report extended properties.</typeparam>
         /// <param name="builder">Builder object.</param>
         /// <returns>The provided builder object.</returns>
-        public static ChannelProviderRegistrationBuilder AddDeliveryReportExtendedProprtiesAdaptor<T>(this ChannelProviderRegistrationBuilder builder)
-        where T : class, IDeliveryReportExtendedProperties, new()
+        public static ChannelProviderRegistrationBuilder AddDeliveryReportExtendedPropertiesAdaptor<T>(this ChannelProviderRegistrationBuilder builder)
+            where T : class, IDeliveryReportExtendedProperties, new()
         {
             _deliveryReportAdaptorType = typeof(T);
             return builder;
