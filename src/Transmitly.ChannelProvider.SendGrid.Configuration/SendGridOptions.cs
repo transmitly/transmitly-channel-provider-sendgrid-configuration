@@ -59,6 +59,14 @@ namespace Transmitly.ChannelProvider.SendGrid.Configuration
         /// </summary>
         public string? ProxyUri { get; set; }
         /// <summary>
+        /// Reject event webhooks whose Signed Event Webhook signature doesn't match <see cref="EventWebhookVerificationKey"/>. Default: true.
+        /// </summary>
+        public bool ValidateDeliveryReportSignature { get; set; } = true;
+        /// <summary>
+        /// Signed Event Webhook verification key (the base64 public key from Settings → Mail Settings → Event Webhook).
+        /// </summary>
+        public string? EventWebhookVerificationKey { get; set; }
+        /// <summary>
         /// Gets the user agent string used in HTTP requests.
         /// </summary>
         public string UserAgent => _userAgent;
