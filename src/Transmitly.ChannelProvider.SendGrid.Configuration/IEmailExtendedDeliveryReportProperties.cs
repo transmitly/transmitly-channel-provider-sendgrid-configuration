@@ -14,25 +14,17 @@
 
 using System;
 using System.Collections.Generic;
-using Transmitly.Channel.Configuration.Email;
-using Transmitly.ChannelProvider.SendGrid.Configuration;
 
-namespace Transmitly
+namespace Transmitly.ChannelProvider.SendGrid.Configuration
 {
     /// <summary>
-    /// The properties availble to a SendGrid Delivery Report.
+    /// The properties available to a SendGrid Delivery Report.
     ///<para>
-    /// Source: <seealso href="https://www.twilio.com/docs/sendgrid/for-developers/tracking-events/event"/> 
+    /// Source: <seealso href="https://www.twilio.com/docs/sendgrid/for-developers/tracking-events/event"/>
     /// </para>
     /// </summary>
     public interface IEmailExtendedDeliveryReportProperties
     {
-        /// <summary>
-        /// Adapts the channel configuration to an extend properties bag.
-        /// </summary>
-        /// <param name="email"></param>
-        /// <returns></returns>
-        IEmailExtendedChannelProperties Adapt(IEmailChannelConfiguration email);
         /// <summary>
         /// Advanced Subscription Management Group Id.
         /// </summary>

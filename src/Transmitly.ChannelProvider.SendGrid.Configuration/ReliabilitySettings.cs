@@ -53,12 +53,12 @@ namespace Transmitly.ChannelProvider.SendGrid.Configuration
 		/// Gets the default list of HTTP status codes for which a request will be retried.
 		/// </summary>
 		public static ICollection<int> DefaultRetriableServerErrorStatusCodes { get; } =
-			[
-				500, //InternalServerErrorr,
-				502, //BadGateway,
-				503, //ServiceUnavailable,
-				504, //GatewayTimeout
-			];
+		[
+			500, //InternalServerErrorr,
+			502, //BadGateway,
+			503, //ServiceUnavailable,
+			504, //GatewayTimeout
+		];
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ReliabilitySettings"/> class with default settings.

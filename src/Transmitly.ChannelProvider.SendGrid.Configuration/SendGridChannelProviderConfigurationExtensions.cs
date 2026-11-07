@@ -37,24 +37,33 @@ namespace Transmitly
 		}
 
 		/// <summary>
-		/// SendGrid specific settings for Email channels.
+		/// SendGrid specific settings.
 		/// </summary>
 		/// <param name="email">Email Channel.</param>
 		/// <returns>SendGrid Email properties.</returns>
 		public static IEmailExtendedChannelProperties SendGrid(this IEmailChannelConfiguration email)
 		{
-			Guard.AgainstNull(email);
-			return SendGridChannelProviderExtendedPropertiesBuilderExtensions.Email.Adapt(email);
+			return new EmailExtendedChannelProperties(Guard.AgainstNull(email).ExtendedProperties);
 		}
 
-        /// <summary>
-        /// SendGrid specific settings for sms delivery reports.
-        /// </summary>
-        /// <param name="deliveryReport">Delivery Report.</param>
-        /// <returns>Infobip SMS delivery report properties.</returns>
-        public static IDeliveryReportExtendedProperties SendGrid(this DeliveryReport deliveryReport)
+		/// <summary>
+		/// SendGrid specific settings
+		/// </summary>
+		/// <param name="email">Email being dispatched.</param>
+		/// <returns>SendGrid Email properties.</returns>
+		public static IEmailExtendedChannelProperties SendGrid(this IEmail email)
 		{
-			return SendGridChannelProviderExtendedPropertiesBuilderExtensions.DeliveryReport.Adapt(deliveryReport);
+			return new EmailExtendedChannelProperties(Guard.AgainstNull(email).ExtendedProperties);
+		}
+
+		/// <summary>
+		/// SendGrid specific values for a delivery report.
+		/// </summary>
+		/// <param name="deliveryReport">Delivery Report.</param>
+		/// <returns>SendGrid delivery report properties.</returns>
+		public static IDeliveryReportExtendedProperties SendGrid(this DeliveryReport deliveryReport)
+		{
+			return new DeliveryReportExtendedProperties(deliveryReport);
 		}
 	}
 }

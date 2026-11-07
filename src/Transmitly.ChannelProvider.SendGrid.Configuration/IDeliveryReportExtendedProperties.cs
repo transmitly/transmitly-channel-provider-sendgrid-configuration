@@ -12,22 +12,13 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-using Transmitly.Delivery;
-
-namespace Transmitly
+namespace Transmitly.ChannelProvider.SendGrid.Configuration
 {
 	/// <summary>
 	/// Represents the extend properties for a send grid delivery report.
 	/// </summary>
 	public interface IDeliveryReportExtendedProperties
 	{
-		/// <summary>
-		/// Adapts the SendGrid delivery report to a <see cref="IDeliveryReportExtendedProperties"/>
-		/// </summary>
-		/// <param name="report">SendGrid report to adapt.</param>
-		/// <returns>Extended proprties bag.</returns>
-		IDeliveryReportExtendedProperties Adapt(DeliveryReport report);
-
 		/// <summary>
 		/// Extended properties for a SengGrid email deliveryReport.
 		/// </summary>
